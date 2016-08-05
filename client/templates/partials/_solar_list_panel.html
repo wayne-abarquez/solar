@@ -1,0 +1,74 @@
+{% raw %}
+<section class="bottom_list_panel"
+         ng-controller="solarListController as listCtl"
+         ng-show="showSolarList"
+         ng-cloak >
+    <div class="container">
+
+          <md-toolbar class="md-primary toolbar-list md-table-toolbar" ng-show="!showSearch">
+            <div class="md-toolbar-tools">
+              <h3>
+                <md-icon>list</md-icon>
+                Client List
+              </h3>
+
+              <span flex></span>
+
+              <md-button class="md-button-icon icon-button" ng-click="showSearch = !showSearch">
+                <md-icon>filter_list</md-icon>
+              </md-button>
+              <md-button class="md-button-icon icon-button">
+                <md-icon>more_vert</md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+
+          <md-toolbar class="white-bg toolbar-search md-table-toolbar" ng-show="showSearch">
+            <div class="md-toolbar-tools ">
+              <md-button class="md-icon-button icon-button">
+                <md-icon>search</md-icon>
+              </md-button>
+              <md-input-container flex="90" layout="row" layout-align="start center" >
+                <label>&nbsp;</label>
+                <input placeholder="Enter Search" ng-model="listCtl.search">
+              </md-input-container>
+              <md-button class="md-icon-button  icon-button" ng-click="showSearch = !showSearch">
+                <md-icon>close</md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+
+        <md-content layout="row" flex>
+
+            <md-table-container flex="100">
+              <table md-table md-progress="">
+                <thead md-head md-order="listCtl.mdTableVars.order"> <!-- add fixed directive for fixed-columns -->
+                  <tr md-row style="height: 30px;">
+                    <th md-column ng-repeat="item in listCtl.tableHeaderList"><span>{{ item.label }}</span></th>
+                    <th md-column><span>Action</span></th>
+                  </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row ng-click="listCtl.onClickRow(solar)"
+                        ng-repeat="solar in solarList | filter: listCtl.search | orderBy: listCtl.mdTableVars.order | limitTo: listCtl.mdTableVars.limit : (listCtl.mdTableVars.page - 1) * listCtl.mdTableVars.limit">
+                        <td md-cell>{{solar.project_name}}</td>
+                        <td md-cell>{{solar.client_name}}</td>
+                        <td md-cell>{{solar.state}}</td>
+                        <td md-cell>{{solar.status}}</td>
+                        <td md-cell width="5%">
+                            <md-button class="md-icon-button" ng-click="listCtl.viewSolarDetail(solar)"><md-icon>visibility</md-icon></md-button>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+            </md-table-container>
+
+        </md-content>
+        <md-toolbar class="list_footer">
+            <div layout="row" layout-align="start center" flex>
+                <md-table-pagination md-limit="listCtl.mdTableVars.limit" md-page="listCtl.mdTableVars.page" md-total="{{solarList.length}}"></md-table-pagination>
+            </div>
+        </md-toolbar>
+    </div>
+</section>
+{% endraw %}

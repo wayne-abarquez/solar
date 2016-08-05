@@ -1,0 +1,26 @@
+{% raw %}
+    <md-button id="addSolarPanelBtn"
+        class="md-fab md-accent md-raised"
+        ng-click="updateSolarCtl.addSolarPanel()"
+        aria-label="Add Solar Panel">
+        <md-tooltip md-direction="left">
+            Add Solar Panel
+        </md-tooltip>
+        <md-icon>add</md-icon>
+    </md-button>
+
+    <md-list id="update-solar-panel-list"
+        ng-class="updateSolarCtl.solar.panels.length > 0 ? '' : 'text-center'">
+        <md-subheader class="md-no-sticky">
+            {{ updateSolarCtl.solar.panels.length > 0 ?
+                updateSolarCtl.solar.panels.length + " solar panel/s"
+                : "No Solar Panel added." }}
+        </md-subheader>
+
+        <!--<div class="solar-panel-list" ng-repeat="panel in updateSolarCtl.solarPanelPolygons track by $index"
+             ng-include="'partials/common_solar/solar_panel_item.html'"></div>-->
+        <div class="solar-panel-list" ng-repeat="panel in updateSolarCtl.solar.panels track by $index"
+             ng-include="'partials/common_solar/solar_panel_item.html'"></div>
+
+    </md-list>
+{% endraw %}

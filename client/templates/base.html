@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="solarApp">
+<head>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="mainController as mainCtl">
+      {# Fixed Top Navbar #}
+      {% include "partials/_top_nav.html" %}
+
+      <main class="mdl-layout__content">
+        <div class="page-content">
+            <!-- Your content goes here -->
+            {% block content %} {% endblock %}
+        </div>
+      </main>
+    </div>
+
+    {#<script src="js/app-jq.min.js"></script>#}
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+</body>
+</html>

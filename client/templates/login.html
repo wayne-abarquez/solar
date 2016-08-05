@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="solarApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!--Import Google Icon Font-->
+     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+{% raw %}
+<div class="full-height full-bg-image" ng-cloak>
+    <div id="ui-login" class="login-frame" layout-fill flex layout="column">
+        <div layout="row" flex layout-padding layout-fill layout-align="center center">
+            <div flex="40" flex-lg="50" flex-md="70" flex-sm="100">
+                <md-card class="md-red-theme">
+                    <md-toolbar layout-align="center center">
+                        <div class="padding-20 text-center">
+                            <!--<div><img ng-src="/resources/images/navagis_logo.png" alt=""></div>-->
+                            <h1 class="md-headline">Solar Site Acquisition Repository</h1>
+                            <div style="text-align:center;"><img class="avatar" src="/resources/images/default-avatar.png" alt=""/></div>
+                            <p>Please Sign in to continue</p>
+                        </div>
+                    </md-toolbar>
+
+                    <md-content class="md-padding" style="">
+{% endraw %}
+                        <form name="login" action="" method="POST" novalidate>
+                            {{ form.csrf_token }}
+
+                            <div class="login-errors">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <ul>
+                                        {% for message in messages %}
+                                            <li>{{message}}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endwith %}
+                            </div>
+
+{% raw %}
+                        <!-- <div class="login-errors"><span>Invalid Username/Password.</span></div> -->
+
+                            <md-input-container layout="row">
+                                <label for="username">Username</label>
+                                <input id="username"   label="username" name="username" type="text" required/>
+                                <div ng-messages="login.email.$error" ng-if="login.email.$dirty">
+                                    <div ng-message when="required"><span>Please Enter Username</span></div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container layout="row">
+                                <label for="password">Password</label>
+                                <input  id="password" label="password" name="password" type="password" required/>
+                                <div ng-messages for="login.password.$error" ng-if="login.password.$dirty">
+                                    <div ng-message when="required"><span>Please Enter Password</span></div>
+                                </div>
+                            </md-input-container>
+
+                            <!--<div layout="row" layout-align="space-between center">-->
+                            <div layout="row" layout-align="end end">
+                                <!--<md-input-container>
+                                    <md-checkbox class="md-warn" name="remember_me" role="checkbox">
+                                        <span>Remember Me</span>
+                                    </md-checkbox>
+                                </md-input-container>-->
+
+                                <md-button class="md-raised md-primary" type="submit" style="width:100%;">Sign in</md-button>
+                            </div>
+
+                        </form>
+
+                    </md-content>
+                </md-card>
+{% endraw %}
+                <footer>
+                  <a href="http://www.navagis.com">
+                      <img ng-src="/resources/images/navagis_powered.png" target="_new" alt=""/>
+                  </a>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

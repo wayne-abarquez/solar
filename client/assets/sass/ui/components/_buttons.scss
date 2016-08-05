@@ -1,0 +1,40 @@
+.md-button {
+  text-transform: capitalize;
+  line-height: 5px;
+  padding: 10px !important;
+}
+
+.btn-primary, .md-primary {
+  background-color: $primary-color !important;
+
+  &:hover {
+    background-color: darken($primary-color, 5%) !important;
+  }
+
+  span:first-child  {
+    color: $primary-font-color;
+  }
+}
+
+.icon-button {
+  min-width: 50px;
+}
+
+.md-button.md-fab {
+  line-height: 0px;
+}
+
+.square-icon-button {
+  min-width: 45px;
+  padding: 0px !important;
+  margin: 0px !important;
+
+  md-icon {
+    line-height: 1.4;
+    font-size: 19px;
+  }
+
+  &:disabled {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+  }
+}

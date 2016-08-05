@@ -1,0 +1,24 @@
+/* Photo Item Card */
+
+.solar-photo-card-item {
+  img.md-card-image {
+    width: auto;
+    height: 150px;
+    cursor: pointer;
+  }
+  md-card-header {
+    height: 50px;
+    padding: 3px 0px 3px 5px;
+
+    md-card-header-text {
+      .md-title {
+        font-size: 12px;
+      }
+    }
+
+    .overflow-button {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+  }
+}

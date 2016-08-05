@@ -1,0 +1,47 @@
+{% raw %}
+<div layout="row" layout-align="end start">
+    <!-- Take Screenshot Button -->
+    <md-button class="md-fab md-accent md-raised"
+        aria-label="Screenshot"
+        ng-click="updateSolarCtl.initializeScreenshot()">
+        <md-tooltip md-direction="top">
+            Screenshot
+        </md-tooltip>
+        <md-icon>camera_alt</md-icon>
+    </md-button>
+
+    <!-- Upload Photo Button -->
+    <!-- For Modal trigger style upload -->
+   <!-- <md-button class="md-fab md-accent md-raised" aria-label="Upload Photo"
+        ngf-select
+        ngf-capture="'camera'"
+        ngf-pattern="'.pdf,image/*'"
+        ng-model="updateSolarCtl.uploadSolarPhotoModel"
+        ngf-model-invalid="updateSolarCtl.uploadSolarPhotoErrorModel">
+        <md-tooltip md-direction="top">
+            Upload Photo
+        </md-tooltip>
+        <md-icon>insert_photo</md-icon>
+    </md-button> -->
+
+    <!-- For upload directly -->
+        <md-button class="md-fab md-accent md-raised" aria-label="Upload Photo"
+            ngf-select="updateSolarCtl.uploadSolarPhoto($file, $invalidFiles)"
+            ngf-capture="'camera'"
+            ngf-pattern="'.pdf,image/*'"
+            ngf-max-size="20MB">
+            <md-tooltip md-direction="top">
+                Upload Photo
+            </md-tooltip>
+            <md-icon>insert_photo</md-icon>
+        </md-button>
+</div>
+
+
+<div layout="row" flex>
+    <div layout-align="start center" layout-gt-sm flex flex-gt-sm="100" flex-gt-md="100"
+         ng-include="'partials/common_solar/solar_card_photo_item.html'" layout-wrap>
+         <!-- Note: Photo Card item being rendered here by ng-include -->
+    </div>
+</div>
+{% endraw %}

@@ -1,0 +1,62 @@
+<md-card layout="column" flex="30" class="solar-photo-card-item" ng-repeat="item in updateSolarCtl.solar.photos track by $index">
+  <md-card-header layout-align="start center">
+
+    <md-card-header-text>
+      <md-tooltip md-direction="top">
+          {{ item.caption || "No Caption" }}
+      </md-tooltip>
+      <span class="md-title text-center solar-photo-card-item-caption"
+            ng-class="item.caption ? '' : 'text-muted'"
+            inline-edit="item.caption"
+            inline-edit-placeholder="Click here to add caption."
+            inline-edit-btn-edit=""
+            inline-edit-on-blur="save"
+            inline-edit-callback="updateSolarCtl.editSolarPhotoCaption(newValue, item)"
+            inline-edit-on-click>
+      </span>
+    </md-card-header-text>
+
+    <md-menu>
+        <md-button aria-label="menu"
+            class="md-icon-button overflow-button"
+            ng-click="updateSolarCtl.openPhotoMenu($mdOpenMenu, $event)">
+          <md-icon>more_vert</md-icon>
+        </md-button>
+        <md-menu-content>
+            <!-- Take Screenshot Button -->
+            <md-menu-item ng-click="updateSolarCtl.changePhotoFromScreenshot(item, $index)">
+              <md-button>
+                <md-icon md-menu-align-target>camera_alt</md-icon>
+                Screenshot
+              </md-button>
+            </md-menu-item>
+            <!-- Upload New Photo Button -->
+            <md-menu-item
+                ngf-select="updateSolarCtl.updateSolarPhoto($file, item, $index, $invalidFiles)"
+                ngf-capture="'camera'"
+                ngf-pattern="'.pdf,image/*'"
+                ngf-max-size="20MB">
+              <md-button>
+                <md-icon md-menu-align-target>insert_photo</md-icon>
+                Change Photo
+              </md-button>
+            </md-menu-item>
+            <!-- Delete Photo Button -->
+            <md-menu-item ng-click="updateSolarCtl.deletePhoto(item, $index)">
+              <md-button>
+                <md-icon md-menu-align-target>delete</md-icon>
+                Delete
+              </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+
+  </md-card-header>
+  <img ng-src="{{item.src}}"
+     class="md-card-image"
+     ng-click="updateSolarCtl.previewImage($event, item)">
+     <md-tooltip md-direction="bottom">
+         {{ item.file_name }}
+     </md-tooltip>
+  </img>
+</md-card>

@@ -1,0 +1,22 @@
+<md-dialog aria-label="Upload Solar Photo" flex="100">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Upload Solar Photo</h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+            <md-content>
+
+{#            {% include "partials/add_solar/_general_info.html" %}#}
+
+            </md-content>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+        <md-button class="md-raised md-primary">Upload</md-button>
+        <md-button class="md-raised" ng-click="uploadSolarFileCtl.closeModal()">Cancel</md-button>
+    <md-dialog-actions>
+</md-dialog>
+

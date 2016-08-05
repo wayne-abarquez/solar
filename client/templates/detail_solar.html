@@ -1,0 +1,46 @@
+{% from 'wtform_material_macros.html' import render_field %}
+{% raw %}
+<md-dialog id="solar-detail-dialog" class="stick-right-modal" aria-label="Solar Initial Setup Information"
+flex="100">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>{{ updateSolarCtl.solar.project_name }}</h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+{% endraw %}
+
+    <md-dialog-content>
+            <md-content>
+                <md-tabs class="md-accent" md-selected="selectedTab">
+
+                    <md-tab id="solarGeneralInfoTab" >
+                        <md-tab-label>General Information</md-tab-label>
+                        <md-tab-body>
+                            {% include "partials/edit_solar/_general_info.html" %}
+                        </md-tab-body>
+                    </md-tab>
+
+                    <md-tab id="solarPanelsTab">
+                        <md-tab-label>Solar Panels</md-tab-label>
+                        <md-tab-body>
+                            {% include "partials/edit_solar/_solar_panels.html" %}
+                        </md-tab-body>
+                    </md-tab>
+
+                    <md-tab id="solarPhotosTab">
+                        <md-tab-label>Photos</md-tab-label>
+                        <md-tab-body>
+                            {% include "partials/edit_solar/_photos.html" %}
+                        </md-tab-body>
+                    </md-tab>
+
+                </md-tabs>
+            </md-content>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+        <md-button class="md-primary md-raised" ng-click="updateSolarCtl.updateSolar()">Save</md-button>
+        <md-button class="md-raised" ng-click="updateSolarCtl.closeModal()">Cancel</md-button>
+    <md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,39 @@
+{% raw %}
+<md-dialog  style="width: 40%;" ng-cloak>
+<div class="modal">
+    <form action="">
+        <md-toolbar class="md-primary">
+          <div class="md-toolbar-tools">
+            <h2>{{ ctl.panel.name }}</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="ctl.closeModal()">
+              <md-icon>close</md-icon>
+            </md-button>
+          </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" layout-padding>
+                <div layout="row">
+                    <md-input-container flex style="margin-top: 0; margin-bottom: 0;">
+                      <label>Name</label>
+                      <input ng-model="ctl.paneldata.name">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container flex style="margin-top: 0; margin-bottom: 0;">
+                      <label>Size</label>
+                      <input ng-model="ctl.paneldata.size">
+                    </md-input-container>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions>
+          <md-button class="md-primary md-raised" ng-click="ctl.updatePanel()">
+            Update Panel
+          </md-button>
+        </md-dialog-actions>
+    </form>
+</div>
+</md-dialog>
+{% endraw %}

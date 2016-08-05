@@ -1,0 +1,42 @@
+{
+  "name": "solar",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Your Name <you@example.com>"
+  ],
+  "license": "BSD-2-Clause",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.8",
+    "underscore": "1.8.3",
+    "font-awesome": "4.5.0",
+    "ngSweetAlert": "angular-sweetalert#~1.1.0",
+    "ng-file-upload": "~10.1.9",
+    "material-design-iconic-font": "~2.2.0",
+    "angular-animate": "1.4.8",
+    "angular-local-storage": "~0.2.2",
+    "angular-sanitize": "1.4.5",
+    "angular-material": "~1.0.0",
+    "angular-aria": "1.4.8",
+    "angular-messages": "1.4.8",
+    "restangular": "~1.5.1",
+    "angular-treasure-overlay-spinner": "~1.1.0",
+    "ng-inline-edit": "~0.7.0",
+    "tinycolor": "1.2.1",
+    "angular-bootstrap-colorpicker": "~3.0.22",
+    "html2canvas": "~0.4.1",
+    "canvas-toBlob.js": "~0.1.3",
+    "FileSaver": "*",
+    "Blob": "*"
+  },
+  "devDependencies": {}
+}

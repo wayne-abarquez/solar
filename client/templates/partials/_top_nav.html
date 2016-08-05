@@ -1,0 +1,67 @@
+{% raw %}
+<!-- Always shows a header, even in smaller screens. -->
+  <header id="solar-top-nav" class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <md-button class="md-icon-button" ng-click="mainCtl.toggleSideNav()" style="line-height: 0px;" ng-cloak><md-icon>menu</md-icon></md-button>
+      <!-- Logo -->
+      <span class="solar-title mdl-layout-title">
+        <a href="#">
+          <img class="company-logo" src="/resources/images/navagis_logo.png">
+        </a>
+      </span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+
+      <!-- <div class="user-avatar-dropdown">
+        <span>hello@example.com</span>
+        <div class="mdl-layout-spacer"></div>
+
+        <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+          <li class="mdl-menu__item">Logout</li>
+        </ul>
+
+        <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+          <i class="material-icons" role="presentation">arrow_drop_down</i>
+          <span class="visuallyhidden">Accounts</span>
+        </button>
+      </div> -->
+      <div class="powered-by">
+          <img src="/resources/images/navagis_powered.png">
+      </div>
+    </div>
+  </header>
+{% endraw %}
+
+<!-- SIDENAV -->
+<md-sidenav layout="column"
+            id="solar-side-nav"
+            class="md-sidenav-left md-whiteframe-z2"
+            md-component-id="sidenav"
+            ng-cloak>
+  <md-toolbar class="md-tall md-hue-2">
+    <span flex></span>
+    <div layout="column" class="md-toolbar-tools-bottom inset user-info">
+       <span flex></span>
+       <div layout="row"><md-icon>account_circle</md-icon></div>
+       <div class="user-title">{{ user.name }}</div>
+       <div class="user-title">{{ user.username }}</div>
+    </div>
+  </md-toolbar>
+
+{% raw %}
+  <md-list>
+    <!--<md-subheader>Management</md-subheader>-->
+    <md-list-item ng-repeat="item in mainCtl.menu">
+        <a href="{{ item.link }}">
+            <md-item-content md-ink-ripple layout="row" layout-align="start center">
+                <div class="inset">
+                    <md-icon>{{item.icon}}</md-icon>
+                </div>
+                <div class="inset">{{ item.title }}</div>
+            </md-item-content>
+        </a>
+    </md-list-item>
+    <!--<md-divider></md-divider>-->
+  </md-list>
+</md-sidenav>
+{% endraw %}

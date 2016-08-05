@@ -1,0 +1,8 @@
+*.pyc
+venv/**
+logs/*.*
+.idea/
+client/assets/bower_components/**
+client/node_modules/**
+client/static/uploads/*.*
+client/static/downloads/*.*

@@ -1,0 +1,89 @@
+<div layout="row" layout-padding>
+    <form action="" class="md-block" flex="100">
+        <div>
+            {#<h5 class="form-sub-header">Site Location</h5>#}
+            <div layout="row" layout-wrap layout-padding class="location-details">
+                <div flex="40"><b>Latitude:</b> <span ng-bind="addSolarCtl.solar.coordinates.lat"></span></div>
+                <div flex="40"><b>Longitude:</b> <span ng-bind="addSolarCtl.solar.coordinates.lng"></span></div>
+                <div flex="100"><b>Location:</b> <span ng-bind="addSolarCtl.solar.address"></span></div>
+            </div>
+            <div layout="row" layout-wrap layout-align="center">
+                <!-- Get Site Location from current position
+                     uses HTML5 Geolocation -->
+                <md-button ng-click="addSolarCtl.getCurrentLocation()" class="md-raised md-hue-1" flex="40">
+                    <md-icon>near_me</md-icon>
+                    Current Location
+                </md-button>
+
+                <!-- Drag Marker to Point Site Location -->
+                <md-button ng-click="addSolarCtl.pointCurrentLocation()" class="md-raised md-hue-1" flex="40">
+                    <md-icon>location_on</md-icon>
+                    Point to Map
+                </md-button>
+            </div>
+
+            <div class="mdl-layout-spacer" style="padding-top: 5px;"></div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Site / Project Name</label>
+                    <input ng-model="addSolarCtl.solar.project_name">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                {% raw %}
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>State</label>
+                    <md-select ng-model="addSolarCtl.solar.state">
+                        <md-option ng-repeat="state in addSolarCtl.states" ng-value="state">{{ state }}</md-option>
+                    </md-select>
+                </md-input-container>
+                {% endraw %}
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>County</label>
+                    <input ng-model="addSolarCtl.solar.county">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Client Name</label>
+                    <input ng-model="addSolarCtl.solar.client_name">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Client Contact No.</label>
+                    <input ng-model="addSolarCtl.solar.client_contact_no">
+                </md-input-container>
+                <!-- <md-input-container class="md-block" flex-gt-sm>
+                    <label>Project Status</label>
+                    <md-select ng-model="addSolarCtl.solar.state">
+                        <md-option ng-repeat="status in addSolarCtl.statuses" ng-value="status">{{ status }}</md-option>
+                    </md-select>
+                </md-input-container> -->
+            </div>
+
+            <md-input-container class="md-block">
+                <label>Site Description</label>
+                <textarea columns="20" rows="3" ng-model="addSolarCtl.solar.site_description"></textarea>
+            </md-input-container>
+
+            <p class="form-sub-header">Site Area</p>
+
+            <!-- Draw Polgyon Button -->
+            <div layout="row" layout-wrap layout-padding layout-align="center">
+                <md-button ng-click="addSolarCtl.startDrawSite()" class="md-raised md-hue-1" flex="100">
+                    <md-icon>photo_size_select_small</md-icon>
+                    Draw Site Area
+                </md-button>
+            </div>
+
+        </div>
+
+        {#div layout-gt-sm="row">#}
+        {#    <div flex="100">{{ render_field(form.latitude) }}</div>#}
+        {#    <div flex="100">{{ render_field(form.longitude) }}</div>#}
+        {#</div>#}
+    </form>
+</div>

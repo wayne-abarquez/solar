@@ -1,0 +1,35 @@
+<md-list-item class="md-3-line panel-item"
+    ng-click="updateSolarCtl.onPanelItemClick(panel)"
+    style="min-height: 50px;">
+    <div class="md-list-item-text" layout="column">
+        <h3>{{ panel.name }}</h3>
+        <h4 style="font-size: 12px;">Size: <span style="color: gray;">{{ panel.size || "Not Specified" }}</span></h4>
+    </div>
+
+    <md-fab-toolbar md-direction="left">
+        <md-fab-trigger class="align-with-text" style="top: 10px;">
+          <md-button aria-label="menu" class="md-icon-button">
+            <md-icon>more_vert</md-icon>
+          </md-button>
+        </md-fab-trigger>
+
+        <md-toolbar>
+          <md-fab-actions class="md-toolbar-tools">
+            <md-button aria-label="Update Panel" class="md-icon-button md-accent"
+                ng-click="updateSolarCtl.editSolarPanelDetails($event, panel, $index)">
+              <md-icon>mode_edit</md-icon>
+            </md-button>
+            <md-button aria-label="Update Polygon" class="md-icon-button md-accent"
+                ng-click="updateSolarCtl.editSolarPanelShape(panel, $index)">
+              <md-icon>format_shapes</md-icon>
+            </md-button>
+            <md-button aria-label="Delete Panel" class="md-icon-button md-accent"
+                ng-click="updateSolarCtl.deleteSolarPanel(panel, $index)">
+              <md-icon>delete</md-icon>
+            </md-button>
+          </md-fab-actions>
+        </md-toolbar>
+    </md-fab-toolbar>
+
+</md-list-item>
+<md-divider></md-divider>

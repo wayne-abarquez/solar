@@ -1,0 +1,52 @@
+{#{% import "material/utils.html" as util %}#}
+{#{% import "material/wtf.html" as wtf %}#}
+{#{% from 'wtform_material_macros.html' import render_field %}#}
+
+<md-dialog class="stick-right-modal" aria-label="Solar Initial Setup Information"
+flex="100">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Solar Initial Setup Information</h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+            <md-content>
+{#                <md-tabs class="md-accent">#}
+
+{#                    <md-tab id="solarGeneralInfoTab" >#}
+{#                        <md-tab-label>General Information</md-tab-label>#}
+{#                        <md-tab-body>#}
+
+                            {% include "partials/add_solar/_general_info.html" %}
+
+{#                        </md-tab-body>#}
+{#                    </md-tab>#}
+
+{#                    <md-tab id="solarPanelsTab">#}
+{#                        <md-tab-label>Solar Panels</md-tab-label>#}
+{#                        <md-tab-body>#}
+{##}
+{#                            {% include "partials/add_solar/_solar_panels.html" %}#}
+{##}
+{#                        </md-tab-body>#}
+{#                    </md-tab>#}
+
+{#                    <md-tab id="solarPhotosTab">#}
+{#                        <md-tab-label>Photos</md-tab-label>#}
+{#                        <md-tab-body>#}
+{#                            View for Item #3#}
+{#                        </md-tab-body>#}
+{#                    </md-tab>#}
+
+{#                </md-tabs>#}
+            </md-content>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+        <md-button class="md-raised md-primary" ng-click="addSolarCtl.saveSolar()">Save</md-button>
+        <md-button class="md-raised" ng-click="addSolarCtl.closeModal()">Cancel</md-button>
+    <md-dialog-actions>
+</md-dialog>
+

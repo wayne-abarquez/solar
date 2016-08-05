@@ -1,0 +1,84 @@
+{% raw %}
+<div layout="row" layout-padding>
+    <form action="" class="md-block" flex="100">
+        <div>
+            <div layout="row" layout-wrap layout-padding class="location-details">
+                <div flex="40"><b>Latitude:</b> <span ng-bind="updateSolarCtl.solar.coordinates.lat"></span></div>
+                <div flex="40"><b>Longitude:</b> <span ng-bind="updateSolarCtl.solar.coordinates.lng"></span></div>
+                <div flex="100"><b>Location:</b> <span ng-bind="updateSolarCtl.solar.address"></span></div>
+            </div>
+            <div layout="row" layout-wrap layout-align="center">
+                <!-- Get Site Location from current position
+                     uses HTML5 Geolocation -->
+                <md-button ng-click="updateSolarCtl.getCurrentLocation()" class="md-raised md-hue-1" flex="40">
+                    <md-icon>near_me</md-icon>
+                    Current Location
+                </md-button>
+
+                <!-- Drag Marker to Point Site Location -->
+                <md-button ng-click="updateSolarCtl.pointCurrentLocation()" class="md-raised md-hue-1" flex="40">
+                    <md-icon>location_on</md-icon>
+                    Point to Map
+                </md-button>
+            </div>
+
+            <div class="mdl-layout-spacer" style="padding-top: 5px;"></div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Site / Project Name</label>
+                    <input ng-model="updateSolarCtl.solar.project_name">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Client Name</label>
+                    <input ng-model="updateSolarCtl.solar.client_name">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>State</label>
+                    <md-select ng-model="updateSolarCtl.solar.state">
+                        <md-option ng-repeat="state in updateSolarCtl.states" ng-value="state">{{ state }}</md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>County</label>
+                    <input ng-model="updateSolarCtl.solar.county">
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Phone</label>
+                    <input ng-model="updateSolarCtl.solar.client_contact_no">
+                </md-input-container>
+                <md-input-container class="md-block" flex-gt-sm>
+                    <label>Project Status</label>
+                    <md-select ng-model="updateSolarCtl.solar.status">
+                        <md-option ng-repeat="status in updateSolarCtl.statuses" ng-value="status">{{ status }}</md-option>
+                    </md-select>
+                    <!--<input ng-model="updateSolarCtl.solar.status">-->
+                </md-input-container>
+            </div>
+
+            <md-input-container class="md-block">
+                <label>Site Description</label>
+                <textarea columns="20" rows="3" ng-model="updateSolarCtl.solar.site_description"></textarea>
+            </md-input-container>
+
+            <p class="form-sub-header">Site Area</p>
+
+            <!-- Draw Polgyon Button -->
+            <div layout="row" layout-wrap layout-padding layout-align="center">
+                <md-button ng-click="updateSolarCtl.startDrawSite()" class="md-raised md-hue-1" flex="100">
+                    <md-icon>photo_size_select_small</md-icon>
+                    Draw Site Area
+                </md-button>
+            </div>
+        </div>
+
+    </form>
+</div>
+{% endraw %}

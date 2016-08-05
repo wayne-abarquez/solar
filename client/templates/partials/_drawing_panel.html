@@ -1,0 +1,81 @@
+<section id="drawing-tools">
+    <!-- Area Polygon Buttons -->
+    <!-- Save -->
+    <md-button class="md-raised md-hue-1 square-icon-button" flex-gt-md="auto"
+               ng-show="showSaveAreaBtn"
+               ng-click="indexCtl.saveArea()"
+               ng-cloak>
+        <md-tooltip md-direction="top">Save</md-tooltip>
+        <md-icon>save</md-icon>
+    </md-button>
+    <!-- Delete Selected -->
+    <md-button class="md-raised md-hue-1 square-icon-button" flex-gt-md="auto"
+               ng-show="showDeleteSelectedBtn"
+               ng-click="indexCtl.deleteSelected()"
+               ng-cloak>
+        <md-tooltip md-direction="top">Delete Selected</md-tooltip>
+        <md-icon>delete</md-icon>
+    </md-button>
+    <!-- Cancel Drawing -->
+    <md-button class="md-raised md-hue-1 square-icon-button" flex-gt-md="auto"
+               ng-show="showMapCancelBtn"
+               ng-click="indexCtl.cancelDrawing()"
+               ng-cloak>
+        <md-tooltip md-direction="top">Cancel</md-tooltip>
+        <md-icon>clear</md-icon>
+    </md-button>
+
+    <!-- Screenshot Buttons -->
+    <div class="screenshot-actions-panel" ng-show="showScreenshotButtons" ng-cloak>
+        <!-- Take Screenshot -->
+        <md-button class="md-raised md-hue-1 square-icon-button" flex-gt-md="auto"
+                   ng-click="indexCtl.startScreenshot()"
+                   ng-cloak>
+            <md-tooltip md-direction="top">Take Screenshot</md-tooltip>
+            <md-icon>center_focus_weak</md-icon>
+        </md-button>
+        <!-- Add Comment -->
+        <md-button class="md-raised md-hue-1 square-icon-button" flex-gt-md="auto"
+                   ng-click="indexCtl.addTextBubble()"
+                   ng-cloak>
+            <md-tooltip md-direction="top">Add Comment</md-tooltip>
+            <md-icon>chat</md-icon>
+        </md-button>
+        <!-- Fill Color -->
+        <md-button class="md-raised md-hue-1 square-icon-button"
+                   colorpicker="rgba"
+                   ng-model="indexCtl.screenshotShapeFillColor">
+            <md-tooltip md-direction="top">Fill Color</md-tooltip>
+            <md-icon>format_color_fill</md-icon>
+        </md-button>
+        <!-- Stroke Color -->
+        <md-button class="md-raised md-hue-1 square-icon-button"
+                   colorpicker="rgba"
+                   ng-model="indexCtl.screenshotShapeStrokeColor">
+            <md-tooltip md-direction="top">Stroke Color</md-tooltip>
+            <md-icon>border_color</md-icon>
+        </md-button>
+        <!-- Stroke Width -->
+        <md-button class="md-raised md-hue-1 square-icon-button"
+            ng-click="indexCtl.showStrokeWidthOptions()">
+            <md-tooltip md-direction="top">Stroke Width</md-tooltip>
+            <md-icon>border_outer</md-icon>
+        </md-button>
+        <!-- Delete Shape -->
+        <md-button class="md-raised md-hue-1 square-icon-button"
+                   ng-disabled="!hasScreenshotSelectedShape"
+                   ng-click="indexCtl.deleteSelected()">
+            <md-tooltip md-direction="top">Delete Selected</md-tooltip>
+            <md-icon>delete</md-icon>
+        </md-button>
+        <!-- Close Screnshot Mode -->
+        <md-button class="md-raised md-hue-1 square-icon-button"
+            ng-click="indexCtl.endScreenshotMode()">
+            <md-tooltip md-direction="top">Cancel Sceenshot</md-tooltip>
+            <md-icon>clear</md-icon>
+        </md-button>
+    </div>
+
+    <!-- Stroke Width -->
+    <md-slider flex step="0.25" ng-model="indexCtl.screenshotShapeStrokeWidth" ng-show="showStrokeWidth" min="1" max="8" style="width: 50%; margin: 0 auto;">
+</section>

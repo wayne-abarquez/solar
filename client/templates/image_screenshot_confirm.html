@@ -1,0 +1,16 @@
+{%raw%}
+<md-dialog id="image-screenshot-confirm-dialog">
+<div class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <!--<section style="display: inline-block;">-->
+        <section style="text-align:center; padding:15px;">
+            <img ng-src="{{screenshotImageConfirmCtl.imagePreview.src}}" style="max-width: 900px;">
+        </section>
+    </div>
+    <div class="modal-footer" ng-show="screenshotImageConfirmCtl.imagePreview.file" style="text-align:center;">
+        <md-button class="md-primary" ng-click="screenshotImageConfirmCtl.save()">Save</md-button>
+        <md-button ng-click="screenshotImageConfirmCtl.cancel()">Cancel</md-button>
+    </div>
+</div>
+</md-dialog>
+{%endraw%}

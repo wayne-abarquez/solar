@@ -1,0 +1,80 @@
+$nav_bg: white;
+$nav_height: 42px;
+$icon-color: lighten($primary-color, 5%);
+$grey-darken: #212121;
+
+  #solar-top-nav {
+    background-color: $nav_bg;
+    color: $icon-color;
+    min-height: $nav_height;
+    max-height: $nav_height;
+    z-index: 6;
+    border-bottom: 2px solid lighten($primary-color, 10%);
+
+    .mdl-layout__drawer-button {
+      color: $icon-color;
+      margin: 0;
+      height: 40px;
+    }
+
+    .mdl-layout__header-row {
+      /* padding left is 40 if side menu will be returned */
+      // padding-left: 40px;
+      padding-left: 0px;
+      padding-right: 0px;
+      height: $nav-height;
+
+      .solar-title {
+        // margin-left: 35px;
+        margin-left: -10px;
+
+        img.company-logo {
+          height: 40px;
+          margin: 0px 5px 0px 5px;
+        }
+      }
+
+      nav {
+        height: $nav-height;
+        align-items: flex-end;
+        a {
+          color: $icon-color;
+        }
+      }
+
+      .user-avatar-dropdown {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+
+        span {
+          margin-right: 10px;
+        }
+      }
+
+
+      .powered-by {
+        display: block;
+        margin-left: 10px;
+        img {
+          height: 35px;
+          margin: 0px 5px 0px 5px;
+        }
+      }
+    }
+
+}
+
+ul#nav-dropdown {
+  li {
+    height: inherit;
+
+    a {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+  li.divider {
+    height: 1px;
+  }
+}
