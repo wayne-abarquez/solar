@@ -1,23 +1,27 @@
 'use strict';
 
 var gulp = require('gulp');
+var srcDir = 'src',
+    staticDir = 'static',
+    assetsDir = 'assets',
+    templatesDir = 'templates';
 
 gulp.paths = {
-    srcDir: 'src',
-    srcTemplates: 'src/templates',
-    src: 'assets',
-    bower: 'assets/bower_components',
-    tmp: 'assets/.tmp',
-    srcImages: 'assets/images',
-    srcSass: 'assets/sass',
-    srcCss: 'assets/css',
-    srcJs: 'assets/js',
-    templates: 'templates',
-    destStatic: 'static',
-    destImages: 'static/resources/images',
-    destFonts: 'templates/fonts',
-    destCss: 'templates/css',
-    destJs: 'templates/js'
+    srcDir: srcDir,
+    srcTemplates: srcDir + '/templates',
+    src: assetsDir,
+    bower: assetsDir + '/bower_components',
+    tmp: assetsDir + '/.tmp',
+    srcImages: assetsDir + '/images',
+    srcSass: assetsDir + '/sass',
+    srcCss: assetsDir + '/css',
+    srcJs: assetsDir + '/js',
+    templates: templatesDir,
+    destStatic: staticDir,
+    destImages: staticDir + '/resources/images',
+    destFonts: templatesDir + '/fonts',
+    destCss: templatesDir + '/css',
+    destJs: templatesDir + '/js'
 };
 
 require('require-dir')('./gulp');
@@ -25,5 +29,3 @@ require('require-dir')('./gulp');
 gulp.task('build', ['clean'], function () {
     gulp.start('buildapp');
 });
-
-

@@ -1,4 +1,5 @@
 from . import home
+from app import app
 from flask import render_template, request, Response
 from .forms import AddSolarForm
 from flask_login import login_required, current_user
@@ -12,12 +13,14 @@ log = logging.getLogger(__name__)
 real_path = '/var/www/solar/client/static/downloads'
 virtual_path = '/static/downloads'
 
+GMAP_API_KEY = app.config['GOOGLE_MAP_API_KEY']
+
 
 @home.route('/', methods=['GET', 'POST'])
 @home.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    return render_template('/index.html', user=current_user)
+    return render_template('/index.html', user=current_user, gmap_api_key=GMAP_API_KEY)
 
 
 @home.route('/html2canvasproxy')
