@@ -1,12 +1,11 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
+var path = require('path'),
+    gulp = require('gulp'),
+    args = require('yargs').argv;
 
-//var uglify = require('uglify-js');
-
-var paths = gulp.paths;
-var $ = require('gulp-load-plugins')();
+var paths = gulp.paths,
+    $ = require('gulp-load-plugins')();
 
 gulp.task('vendor-scripts', function () {
     return gulp.src([
@@ -51,14 +50,22 @@ gulp.task('jq-scripts', function () {
        .pipe($.size());
 });
 
-gulp.task('app-scripts', ['jq-scripts'], function () {
-    return gulp.src( ['!'+paths.srcTemplates + '/js/app_jq.js', paths.srcTemplates + '/js/*.js', paths.srcTemplates + '/js/app/**/*.js'])
+gulp.task('app-scripts', function () {
+    return gulp.src([
+            '!' + paths.srcTemplates + '/js/app_jq.js',
+            paths.srcTemplates + '/js/*.js',
+            paths.srcTemplates + '/js/app/**/*.js'
+        ])
+        .pipe($.plumber())
         .pipe($.eslint())
         .pipe($.eslint.format())
+        // Brick on failure to be super strict
+        .pipe($.eslint.failOnError())
         .pipe($.ngAnnotate())
         .pipe($.angularFilesort())
         .pipe($.concat('app.min.js'))
-        .pipe($.uglify({mangle: false}).on('error', $.util.log))
+        .pipe($.if(args.production, $.uglify()))
+        //.pipe($.if(args.production, $.jsObfuscator()))
         .pipe(gulp.dest(paths.destJs + '/'))
         .pipe($.size());
 });

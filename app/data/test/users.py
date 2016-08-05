@@ -20,6 +20,11 @@ test_users = [
     {
         'username': 'testclient',
         'role_id': 4
+    },
+    {
+        'username': 'localuser',
+        'password': 'localuser',
+        'role_id': 4
     }
 ]
 

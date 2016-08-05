@@ -18,6 +18,7 @@ class Config(object):
     REAL_PATH = '/var/www/solar/client/static/downloads'
     VIRTUAL_PATH = '/static/downloads'
     TMP_DIR = '/var/www/solar/tmp'
+    GOOGLE_MAP_API_KEY = 'AIzaSyBU2IhITO_ygNUan5ortuYxJc6idxrsFlE'
 
 
 class DevelopmentConfig(Config):

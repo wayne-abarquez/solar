@@ -2,7 +2,6 @@ from app import db
 from faker import Factory
 from app.models import Solar
 from app.auth_mod.models import User, Role
-from app.constants import solar_constants
 from app.data.test import solars, roles, users
 fake = Factory.create('en_US')
 
@@ -39,7 +38,7 @@ class SampleData:
         SampleData.refresh_table('user')
         for data in users.test_users:
             user = User.from_dict(data)
-            user.password = users.test_password
+            user.password = data['password'] if 'password' in data else users.test_password
             db.session.add(user)
         db.session.commit()
 
