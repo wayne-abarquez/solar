@@ -1,0 +1,26 @@
+Running app...
+--------------------------------------------------------------------------------
+INFO in __init__ [/var/www/solar/app/__init__.py:48]:
+Will output log to /var/www/solar/logs/solar.log
+--------------------------------------------------------------------------------
+2016-08-09 01:32:56,255 INFO - __init__.py <module>: Will output log to /var/www/solar/logs/solar.log
+--------------------------------------------------------------------------------
+INFO in __init__ [/var/www/solar/app/__init__.py:48]:
+Will output log to /var/www/solar/logs/solar.log
+--------------------------------------------------------------------------------
+2016-08-09 01:32:56,307 INFO - __init__.py <module>: Will output log to /var/www/solar/logs/solar.log
+--------------------------------------------------------------------------------
+INFO in run [/var/www/solar/run.py:3]:
+Starting app
+--------------------------------------------------------------------------------
+2016-08-09 01:32:56,459 INFO - run.py <module>: Starting app
+--------------------------------------------------------------------------------
+INFO in run [/var/www/solar/run.py:3]:
+Starting app
+--------------------------------------------------------------------------------
+2016-08-09 01:32:56,495 INFO - run.py <module>: Starting app
+--------------------------------------------------------------------------------
+DEBUG in solars_resource [/var/www/solar/app/resources/solars_resource.py:55]:
+GET Solar request: None
+--------------------------------------------------------------------------------
+2016-08-09 01:33:54,014 DEBUG - solars_resource.py get: GET Solar request: None

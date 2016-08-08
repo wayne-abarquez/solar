@@ -1,0 +1,14 @@
+[2016-08-09 01:21:36 +0000] [5661] [INFO] Starting gunicorn 19.3.0
+[2016-08-09 01:21:36 +0000] [5661] [INFO] Listening at: http://127.0.0.1:8001 (5661)
+[2016-08-09 01:21:36 +0000] [5661] [INFO] Using worker: sync
+[2016-08-09 01:21:36 +0000] [5666] [INFO] Booting worker with pid: 5666
+[2016-08-09 01:21:36 +0000] [5669] [INFO] Booting worker with pid: 5669
+[2016-08-09 01:21:54 +0000] [5661] [INFO] Handling signal: int
+[2016-08-09 01:21:54 +0000] [5669] [INFO] Worker exiting (pid: 5669)
+[2016-08-09 01:21:54 +0000] [5666] [INFO] Worker exiting (pid: 5666)
+[2016-08-09 01:21:54 +0000] [5661] [INFO] Shutting down: Master
+[2016-08-09 01:32:56 +0000] [6044] [INFO] Starting gunicorn 19.3.0
+[2016-08-09 01:32:56 +0000] [6044] [INFO] Listening at: http://127.0.0.1:8001 (6044)
+[2016-08-09 01:32:56 +0000] [6044] [INFO] Using worker: sync
+[2016-08-09 01:32:56 +0000] [6049] [INFO] Booting worker with pid: 6049
+[2016-08-09 01:32:56 +0000] [6050] [INFO] Booting worker with pid: 6050

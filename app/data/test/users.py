@@ -6,7 +6,7 @@ test_password = 'password123'
 
 test_users = [
     {
-        'username': 'testadmin',
+        'username': 'admin',
         'role_id': 1
     },
     {
